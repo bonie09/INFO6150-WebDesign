@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Travel Company (Contact) - Part A</title>
+    <title>Travel Company | Booking - Part A</title>
     <link rel="stylesheet" href="./style.css" />
     <!-- Favicon tag  -->
     <link rel="icon" type="image/x-icon" href="./Images/favicon.ico" />
@@ -17,70 +17,72 @@
         <a class="hyperlinks" href="flight.html">Manage Booking</a>
       </div>
     </header>
-    <div id="container">
-      <hr />
-      <h1>Manage Your Booking</h1>
-      <hr />
-      <br />
-      <!-- Below section contains FORM tag and attributes  -->
-      <form>
-        <label>First name:</label><br />
-        <input type="text" id="f_name" name="f_name" /><br /><br />
-        <label>Last name:</label><br />
-        <input type="text" id="l_name" name="l_name" /><br /><br />
-        <label>Email:</label> <br />
-        <input type="email" id="email" name="email" /><br /><br />
-        <label for="departure_airport">From:</label><br />
-        <select id="departure_airport" name="departure_airport">
-          <option></option>
-          <option value="Boston">Boston</option>
-          <option value="San Francisco">San Francisco</option>
-          <option value="Seattle">Seattle</option>
-          <option value="Miami">Miami</option></select
-        ><br /><br />
-        <label for="arrival_airport">To:</label><br />
-        <select id="arrival_airport" name="arrival_airport">
-          <option></option>
-          <option value="Mumbai">Mumbai</option>
-          <option value="Delhi">Delhi</option>
-          <option value="Hyderabad">Hyderabad</option>
-          <option value="Bangalore">Bangalore</option>
-        </select>
-        <br /><br />
-        <label for="trip_detail">Trip Detail:</label> <br />
-        <select name="trip_detail">
-          <option></option>
-          <option value="one_way">One Way</option>
-          <option value="round_trip">Round Trip</option>
-          <option value="multi_city">Multi City</option>
-        </select>
-        <br /><br />
-        <label for="depart_date">Depart Date:</label><br />
-        <input type="date" id="depart_date" /><br /><br />
-        <label for="return_date">Return Date:</label><br />
-        <input type="date" id="return_date" /><br /><br />
-        <label for="no_of_travellers">No. of Travellers:</label><br />
-        <select name="no_of_travellers">
-          <option></option>
-          <option value="1">1 Adult</option>
-          <option value="2">2 Adults</option>
-          <option value="3">3 Adults</option>
-          <option value="4">4 Adults</option>
-        </select>
-        <br /><br />
-        <label for="cabin_class">Cabin Class</label><br />
-        <select name="cabin_class">
-          <option></option>
-          <option value="Economy">Economy</option>
-          <option value="Premium Economy">Premium Economy</option>
-          <option value="Business">Business</option>
-          <option value="First">First</option>
-        </select>
-        <br /><br />
-        <button class="btn" type="button" onclick="alert('Form Submitted')">
-          Submit
-        </button>
-      </form>
-    </div>
+    <!-- Section block for form and submit button  -->
+    <section>
+      <div id="container">
+        <hr />
+        <h1>Manage Your Booking</h1>
+        <hr />
+        <br />
+        <form>
+          <label>First name:</label><br />
+          <input type="text" id="f_name" name="f_name" /><br /><br />
+          <label>Last name:</label><br />
+          <input type="text" id="l_name" name="l_name" /><br /><br />
+          <label>Email:</label> <br />
+          <input type="email" id="email" name="email" /><br /><br />
+          <label for="departure_airport">From:</label><br />
+          <select id="departure_airport" name="departure_airport">
+            <option></option>
+            <option value="Boston">Boston</option>
+            <option value="San Francisco">San Francisco</option>
+            <option value="Seattle">Seattle</option>
+            <option value="Miami">Miami</option></select
+          ><br /><br />
+          <label for="arrival_airport">To:</label><br />
+          <select id="arrival_airport" name="arrival_airport">
+            <option></option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Bangalore">Bangalore</option>
+          </select>
+          <br /><br />
+          <label for="trip_detail">Trip Detail:</label> <br />
+          <select name="trip_detail">
+            <option></option>
+            <option value="one_way">One Way</option>
+            <option value="round_trip">Round Trip</option>
+            <option value="multi_city">Multi City</option>
+          </select>
+          <br /><br />
+          <label for="depart_date">Depart Date:</label><br />
+          <input type="date" id="depart_date" /><br /><br />
+          <label for="return_date">Return Date:</label><br />
+          <input type="date" id="return_date" /><br /><br />
+          <label for="no_of_travellers">No. of Travellers:</label><br />
+          <select name="no_of_travellers">
+            <option></option>
+            <option value="1">1 Adult</option>
+            <option value="2">2 Adults</option>
+            <option value="3">3 Adults</option>
+            <option value="4">4 Adults</option>
+          </select>
+          <br /><br />
+          <label for="cabin_class">Cabin Class</label><br />
+          <select name="cabin_class">
+            <option></option>
+            <option value="Economy">Economy</option>
+            <option value="Premium Economy">Premium Economy</option>
+            <option value="Business">Business</option>
+            <option value="First">First</option>
+          </select>
+          <br /><br />
+          <button class="btn" type="button" onclick="alert('Form Submitted')">
+            Submit
+          </button>
+        </form>
+      </div>
+    </section>
   </body>
 </html>

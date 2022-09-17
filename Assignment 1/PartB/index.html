@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Company | Home - Part B</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Favicon tag  -->
+    <link rel="icon" type="image/x-icon" href="./Images/favicon.ico" />
+  </head>
+  <body>
+    <!-- Section block for the navbar -->
+    <section>
+      <header>
+        <nav>
+          <ul class="navbar">
+            <li><a href="#">TravelCompany.com</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </header>
+    </section>
+
+    <hr />
+    <h1>Welcome to TravelCompany.com</h1>
+    <h2>Book a flight with us and explore</h2>
+    <hr />
+
+    <section>
+      <div class="container">
+        <div class="background_img">
+          <div class="text">
+            <form>
+              <h1>Manage your booking here</h1>
+              <label for="departure_airport">From:</label>
+              <select id="departure_airport" name="departure_airport">
+                <option></option>
+                <option value="Boston">Boston</option>
+                <option value="San Francisco">San Francisco</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Miami">Miami</option></select
+              >&nbsp;&nbsp;
+              <label for="arrival_airport">To:</label>
+              <select id="arrival_airport" name="arrival_airport">
+                <option></option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Bangalore">Bangalore</option></select
+              >&nbsp;&nbsp;
+              <label for="trip_detail">Trip Detail:</label>
+              <select name="trip_detail">
+                <option></option>
+                <option value="one_way">One Way</option>
+                <option value="round_trip">Round Trip</option>
+                <option value="multi_city">Multi City</option></select
+              >&nbsp;&nbsp;<br /><br />
+              <label for="depart_date">Depart Date:</label>
+              <input type="date" id="depart_date" />&nbsp;
+              <label for="return_date">Return Date:</label>
+              <input type="date" id="return_date" />&nbsp;
+              <label for="no_of_travellers">No. of Travellers:</label>
+              <select name="no_of_travellers">
+                <option></option>
+                <option value="1">1 Adult</option>
+                <option value="2">2 Adults</option>
+                <option value="3">3 Adults</option>
+                <option value="4">4 Adults</option>
+              </select>
+              <label for="cabin_class">Cabin Class</label>
+              <select name="cabin_class">
+                <option></option>
+                <option value="Economy">Economy</option>
+                <option value="Premium Economy">Premium Economy</option>
+                <option value="Business">Business</option>
+                <option value="First">First</option>
+              </select>
+              <br /><br />
+              <button type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Popular Destinations to visit</h2>
+      <p>Travel inspiration for you</p>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <video controls>
+              <source src="./Videos/Mumbai.mp4" type="video/mp4" />
+            </video>
+            <h2>Mumbai</h2>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <video controls>
+              <source src="./Videos/newyork.mp4" type="video/mp4" />
+            </video>
+            <h2>New York City</h2>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <video controls>
+              <source src="./Videos/canada.mp4" type="video/mp4" />
+            </video>
+            <h2>Canada</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <footer>
+        <h4>Copyright &copy TravelCompany.com</h4>
+      </footer>
+    </section>
+  </body>
+</html>
