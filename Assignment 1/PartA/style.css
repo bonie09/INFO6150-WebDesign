@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #d3d3d3;
+}
+nav {
+  display: flex;
+  width: 100%;
+  overflow: auto;
+  height: auto;
+}
+.hyperlinks {
+  display: inline-block;
+  text-align: center;
+  padding: 25px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 20px;
+}
+.hyperlinks:hover {
+  border-bottom: 2px solid black;
+}
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+h1,
+h2,
+form {
+  text-align: center;
+}
+.col {
+  float: left;
+  width: 25%;
+  padding: 15px 25px;
+}
+img {
+  width: 400px;
+  height: 200px;
+}
+.row {
+  margin: 0 5px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  background-color: #868686;
+}
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 2px solid #868686;
+}
+tr:hover {
+  background-color: #868686;
+}
+label {
+  font-size: 18px;
+}
+option {
+  font-size: 16px;
+}
+input {
+  width: 20%;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+input:focus {
+  background-color: #868686;
+  color: white;
+}
+select {
+  width: 20%;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+select:focus {
+  border: 3px solid #555;
+}
+.btn {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 18px;
+  margin: 4px 2px;
+  transition-duration: 0.5s;
+}
+.btn:hover {
+  background-color: #555555;
+  color: white;
+}

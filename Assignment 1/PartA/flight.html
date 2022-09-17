@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Company (Contact) - Part A</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Favicon tag  -->
+    <link rel="icon" type="image/x-icon" href="./Images/favicon.ico" />
+  </head>
+  <body>
+    <!--Part A:
+Create two pages website for a coffee shop, Travel, or anything by using of below HTML controls, 
+and feel free to add more HTML controls
+Table
+-->
+    <header>
+      <nav>
+        <!-- HYPERLINKS tags are used in navbar section  -->
+        <div class="navbar">
+          <a class="hyperlinks" href="index.html">TravelCompany.com</a>
+          <a class="hyperlinks" href="flight.html">Manage Booking</a>
+        </div>
+      </nav>
+    </header>
+    <div id="container">
+      <hr />
+      <h1>Manage Your Booking</h1>
+      <hr />
+      <br />
+      <!-- Below section contains FORM tag and attributes  -->
+      <form>
+        <label>First name:</label>
+        <input type="text" id="f_name" name="f_name" /><br /><br />
+        <label>Last name:</label>
+        <input type="text" id="l_name" name="l_name" /><br /><br />
+        <label>Email:</label>
+        <input type="email" id="email" name="email" /><br /><br />
+        <label for="departure_airport">From:</label>
+        <select id="departure_airport" name="departure_airport">
+          <option></option>
+          <option value="Boston">Boston</option>
+          <option value="San Francisco">San Francisco</option>
+          <option value="Seattle">Seattle</option>
+          <option value="Miami">Miami</option></select
+        >&nbsp&nbsp&nbsp
+        <label for="arrival_airport">To:</label>
+        <select id="arrival_airport" name="arrival_airport">
+          <option></option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Bangalore">Bangalore</option>
+        </select>
+        <br /><br />
+        <label for="trip_detail">Trip Detail:</label>
+        <select name="trip_detail">
+          <option></option>
+          <option value="one_way">One Way</option>
+          <option value="round_trip">Round Trip</option>
+          <option value="multi_city">Multi City</option>
+        </select>
+        <br /><br />
+        <label for="depart_date">Depart Date:</label>
+        <input type="date" id="depart_date" />&nbsp&nbsp&nbsp
+        <label for="return_date">Return Date:</label>
+        <input type="date" id="return_date" /><br /><br />
+        <label for="no_of_travellers">No. of Travellers:</label>
+        <select name="no_of_travellers">
+          <option></option>
+          <option value="1">1 Adult</option>
+          <option value="2">2 Adults</option>
+          <option value="3">3 Adults</option>
+          <option value="4">4 Adults</option>
+        </select>
+        <br /><br />
+        <label for="cabin_class">Cabin Class</label>
+        <select name="cabin_class">
+          <option></option>
+          <option value="Economy">Economy</option>
+          <option value="Premium Economy">Premium Economy</option>
+          <option value="Business">Business</option>
+          <option value="First">First</option>
+        </select>
+        <br /><br />
+        <button class="btn" type="button" onclick="alert('Form Submitted')">
+          Submit
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
