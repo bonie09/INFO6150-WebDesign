@@ -5,9 +5,10 @@
 - Email ID: sachdev.bo@northeastern.edu
 - Prof. Vishal Chawla
 
-## Topic: Created a professional portfolio website using HTML5 and CSS elements 
+## Topic: Created a professional portfolio website using HTML5 and CSS elements
 
 ### Features:
+
 Created a Responsive Website (home.html) with HTML and external CSS Styling Sheet without any Bootstrap or JS libraries.
 
 - HTML & HTML5 tags are used in overall file
@@ -15,7 +16,7 @@ Created a Responsive Website (home.html) with HTML and external CSS Styling Shee
 - Used overflow property as auto in footer section
 - Column layout structure used in about, skills and contact sections
 - absolute & relative positioning used in project card section and experience sections
-- tel & mailto options are used with icon in contact section 
+- tel & mailto options are used with icon in contact section
 - hover effects are used in project section which will basically rotate the card to 180 degree
 - figure captions are used in project section which tells with whom the project was associated
 
@@ -25,6 +26,7 @@ With the help of HTML tags and CSS animations a rich UI built. Hovering effects 
 The below tags are used:
 
 - html
+- favicon
 - header
 - nav, ul, li, a
 - span
