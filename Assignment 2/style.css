@@ -258,9 +258,10 @@ figcaption {
   margin-top: 30px;
   padding: 30px;
   text-align: center;
-  color: #000;
+  color: #55198b;
   overflow: auto;
   width: 100%;
+  background-color: #bbb;
 }
 @media screen and (max-width: 912px) {
   .projectCard {
