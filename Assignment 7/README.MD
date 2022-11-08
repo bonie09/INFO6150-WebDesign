@@ -1,41 +1,29 @@
-# ASSIGNMENT 2
+# ASSIGNMENT 7
 
 - Name: Bonie Rajkumar Sachdev
 - NUID: 002774547
 - Email ID: sachdev.bo@northeastern.edu
 - Prof. Vishal Chawla
 
-## Topic: Created a professional portfolio website using HTML5 and CSS elements
+## Topic: Assignment 7th use of CSS Grid/Flexbox & SASS/SCSS Features
 
 ### Features:
 
-Created a Responsive Website (home.html) with HTML and external CSS Styling Sheet without any Bootstrap or JS libraries.
+Created a 2 page website using CSS Grid/Flexbox and SASS/SCSS Features
 
-- HTML & HTML5 tags are used in overall file
-- Used float property for images and other sections
-- Used overflow property as auto in footer section
-- Column layout structure used in about, skills and contact sections
-- absolute & relative positioning used in project card section and experience sections
-- tel & mailto options are used with icon in contact section
-- hover effects are used in project section which will basically rotate the card to 180 degree
-- figure captions are used in project section which tells with whom the project was associated
+- Variables -> All variables are declared in config.scss file which is imported in each and every file to use those variables
+- Custom Properties ->
+- Nesting -> Nesting of styling is done in alomost all the pages ex can be seen in navbar.scss
+- Interpolation ->
+- Placeholder Selectors -> Placeholder selector example has been set in button.scss and it has been used as @extend
+- Mixins -> Mixin is used to call the function for changing the background of the button and setting the text color
+- Functions -> Function is used to change the color of the button when the hovers
 
 ## Creative Aspects of the Project
 
-With the help of HTML tags and CSS animations a rich UI built. Hovering effects and smooth scroll behaviour added in the website. In the contact section, Multiple icons are used which will either redirect to another page or will let user to call or mail. Throughout the website consistency of colors are maintained.
-The below tags are used:
-
-- html
-- favicon
-- header
-- nav, ul, li, a
-- span
-- h1, h2, p, img
-- figure
-- figcaption
-- footer
+With the help of HTML tags and CSS animations a rich UI built. Hovering effects and smooth scroll behaviour added in the website.
 
 ### Setup:
 
-- Open the home.html file on vscode
+- Open the home.html file on vscode & start "Watch Sass extension on the vscode"
 - Run the application with live server (VS Code extension)
