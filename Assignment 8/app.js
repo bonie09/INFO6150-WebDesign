@@ -29,6 +29,7 @@ app.get("/", (req, res) => {
 app.use("/api/create", userRouters);
 app.use("/api/edit", userRouters);
 app.use("/api/delete", userRouters);
+app.use("/api/getAll", userRouters);
 
 app.use(notFound);
 app.use(errorHandler);

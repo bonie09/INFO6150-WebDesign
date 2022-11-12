@@ -1,18 +1,24 @@
+const e = require("express");
 const asyncHandler = require("express-async-handler");
 const { findByIdAndDelete, findOneAndDelete } = require("../models/userModel");
 const User = require("../models/userModel");
 
 const editUser = asyncHandler(async (req, res) => {
   //   console.log("something happened");
-  let upid = req.params.id;
+  // let upid = req.params.id;
   let upname = req.body.name;
+  let getEmail = req.body.email;
   let uppassword = req.body.password;
-  const userUpdate = await User.findByIdAndUpdate(
-    { _id: upid },
+  const userUpdate = await User.findOneAndUpdate(
+    { email: getEmail },
     { $set: { name: upname, password: uppassword } }
   )
-    .then((item) => {
-      res.status(201).send({ message: "User Updated" });
+    .then((data) => {
+      if (data == null) {
+        res.status(400).send({ message: "User does not exist" });
+      } else {
+        res.status(201).send({ message: "User Updated" });
+      }
     })
     .catch((err) => {
       res.status(400).send({ message: "User does not exist" });
@@ -49,19 +55,37 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 const deleteUser = asyncHandler(async (req, res) => {
-  let param_delemail = req.params.id;
+  // let param_delemail = req.params.id;
   let delemail = req.body.email;
-  console.log(param_delemail, delemail);
+  // console.log(param_delemail, delemail);
 
   const deleteUser = await User.findOneAndDelete({ email: delemail })
     .then((data) => {
       if (data == null) {
         res.status(400).send({ message: "User does not exist" });
+      } else {
+        res.status(201).send({ message: "User Deleted" });
       }
-      res.status(201).send({ message: "User Deleted" });
     })
     .catch((err) => {
       res.status(400).send({ message: "Something went wrong" });
     });
 });
-module.exports = { registerUser, editUser, deleteUser };
+
+const getUsers = asyncHandler(async (req, res) => {
+  // console.log("Something happened");
+  const readUsers = await User.find()
+    .then((data) => {
+      if (data.length == 0) {
+        res
+          .status(400)
+          .send({ message: "Users does not exist. Please enter users first" });
+      } else {
+        res.status(201).send(data);
+      }
+    })
+    .catch((err) => {
+      res.status(400).send({ message: "Something went wrong" });
+    });
+});
+module.exports = { registerUser, editUser, deleteUser, getUsers };
