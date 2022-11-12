@@ -26,10 +26,10 @@ app.get("/", (req, res) => {
   res.send("API is running....");
 });
 
-app.use("/api/create", userRouters);
-app.use("/api/edit", userRouters);
-app.use("/api/delete", userRouters);
-app.use("/api/getAll", userRouters);
+app.use("/user/create", userRouters);
+app.use("/user/edit", userRouters);
+app.use("/user/delete", userRouters);
+app.use("/user/getAll", userRouters);
 
 app.use(notFound);
 app.use(errorHandler);
