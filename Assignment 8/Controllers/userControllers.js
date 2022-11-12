@@ -101,17 +101,25 @@ const deleteUser = asyncHandler(async (req, res) => {
   let delemail = req.body.email;
   // console.log(param_delemail, delemail);
 
-  const deleteUser = await User.findOneAndDelete({ email: delemail })
-    .then((data) => {
-      if (data == null) {
-        res.status(400).send({ message: "User does not exist" });
-      } else {
-        res.status(201).send({ message: "User Deleted" });
-      }
-    })
-    .catch((err) => {
-      res.status(400).send({ message: "Something went wrong" });
+  let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  if (!delemail.trim().match(regexEmail)) {
+    res.status(400).send({
+      message: "Email address is not valid",
     });
+  } else {
+    const deleteUser = await User.findOneAndDelete({ email: delemail })
+      .then((data) => {
+        if (data == null) {
+          res.status(400).send({ message: "User does not exist" });
+        } else {
+          res.status(201).send({ message: "User Deleted" });
+        }
+      })
+      .catch((err) => {
+        res.status(400).send({ message: "Something went wrong" });
+      });
+  }
 });
 
 const getUsers = asyncHandler(async (req, res) => {
