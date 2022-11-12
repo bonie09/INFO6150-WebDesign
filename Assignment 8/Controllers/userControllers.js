@@ -9,6 +9,27 @@ const editUser = asyncHandler(async (req, res) => {
   let upname = req.body.name;
   let getEmail = req.body.email;
   let uppassword = req.body.password;
+  let regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$/;
+  let regexName = /^(?=.{3,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z ]+(?<![_.])$/;
+  let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  if (!upname.trim().match(regexName)) {
+    res.status(400).send({
+      message:
+        "New Full Name should have atleast 3 characters without any special characters",
+    });
+  }
+  if (!getEmail.trim().match(regexEmail)) {
+    res.status(400).send({
+      message: "Email address is not valid",
+    });
+  }
+  if (!uppassword.trim().match(regexPassword)) {
+    res.status(400).send({
+      message:
+        "New Passwords are 8-16 characters with uppercase letters, lowercase letters and at least one number",
+    });
+  }
   const userUpdate = await User.findOneAndUpdate(
     { email: getEmail },
     { $set: { name: upname, password: uppassword } }
@@ -29,28 +50,49 @@ const editUser = asyncHandler(async (req, res) => {
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
 
-  const userExists = await User.findOne({ email });
+  let regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$/;
+  let regexName = /^(?=.{3,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z ]+(?<![_.])$/;
+  let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-  if (userExists) {
-    res.status(400);
-    throw new Error("User already exists");
-  }
-
-  const user = await User.create({
-    name,
-    email,
-    password,
-  });
-
-  if (user) {
-    res.status(201).json({
-      _id: user._id,
-      name: user.name,
-      email: user.email,
+  if (!name.trim().match(regexName)) {
+    res.status(400).send({
+      message:
+        "Full Name should have atleast 3 characters without any special characters",
+    });
+  } else if (!email.trim().match(regexEmail)) {
+    res.status(400).send({
+      message: "Email address is not valid",
+    });
+  } else if (!password.trim().match(regexPassword)) {
+    res.status(400).send({
+      message:
+        "Passwords are 8-16 characters with uppercase letters, lowercase letters and at least one number",
     });
   } else {
-    res.status(400);
-    throw new Error("Error Occured!!");
+    const userExists = await User.findOne({ email });
+
+    if (userExists) {
+      res.status(400).send({
+        message: "User already exists",
+      });
+    }
+
+    const user = await User.create({
+      name,
+      email,
+      password,
+    });
+
+    if (user) {
+      res.status(201).json({
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+      });
+    } else {
+      res.status(400);
+      throw new Error("Error Occured!!");
+    }
   }
 });
 
