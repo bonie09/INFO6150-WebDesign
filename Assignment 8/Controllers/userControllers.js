@@ -1,4 +1,5 @@
 const asyncHandler = require("express-async-handler");
+const { findByIdAndDelete, findOneAndDelete } = require("../models/userModel");
 const User = require("../models/userModel");
 
 const editUser = asyncHandler(async (req, res) => {
@@ -14,7 +15,7 @@ const editUser = asyncHandler(async (req, res) => {
       res.status(201).send({ message: "User Updated" });
     })
     .catch((err) => {
-      res.status(400).send({ message: "User updation failed" });
+      res.status(400).send({ message: "User does not exist" });
     });
   //   console.log(upid, upname, uppassword);
 });
@@ -47,4 +48,20 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { registerUser, editUser };
+const deleteUser = asyncHandler(async (req, res) => {
+  let param_delemail = req.params.id;
+  let delemail = req.body.email;
+  console.log(param_delemail, delemail);
+
+  const deleteUser = await User.findOneAndDelete({ email: delemail })
+    .then((data) => {
+      if (data == null) {
+        res.status(400).send({ message: "User does not exist" });
+      }
+      res.status(201).send({ message: "User Deleted" });
+    })
+    .catch((err) => {
+      res.status(400).send({ message: "Something went wrong" });
+    });
+});
+module.exports = { registerUser, editUser, deleteUser };
