@@ -1,6 +1,6 @@
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
-// import LandingPage from "./Pages/LandingPage/LandingPage";
+import LoginPage from "./Pages/LoginPage/LoginPage";
 import HomePage from "./Pages/HomePage/HomePage";
 import AboutPage from "./Pages/AboutPage/AboutPage";
 import JobPage from "./Pages/JobPage/JobPage";
@@ -13,7 +13,7 @@ function App() {
       <Header />
       <main>
         <Routes>
-          {/* <Route path="/" element={<LoginPage />} /> */}
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/jobs" element={<JobPage />} />

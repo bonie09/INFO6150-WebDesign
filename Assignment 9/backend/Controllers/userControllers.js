@@ -4,6 +4,24 @@ const { findByIdAndDelete, findOneAndDelete } = require("../models/userModel");
 const User = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 
+const authUser = asyncHandler(async (req, res) => {
+  const user = await User.findOne({
+    email: req.body.email,
+  });
+
+  if (!user) {
+    return res.json({ stutus: "error", user: false });
+  }
+
+  const userPassword = await bcrypt.compare(req.body.password, user.password);
+
+  if (userPassword) {
+    return res.json({ stutus: "ok", user: true });
+  } else {
+    return res.json({ stutus: "error", user: false });
+  }
+});
+
 const editUser = asyncHandler(async (req, res) => {
   //   console.log("something happened");
   // let upid = req.params.id;
@@ -182,4 +200,4 @@ const getUsers = asyncHandler(async (req, res) => {
       res.status(400).send({ message: "Something went wrong" });
     });
 });
-module.exports = { registerUser, editUser, deleteUser, getUsers };
+module.exports = { registerUser, editUser, deleteUser, getUsers, authUser };

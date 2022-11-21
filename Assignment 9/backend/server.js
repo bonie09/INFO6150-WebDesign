@@ -5,7 +5,9 @@ const mongoose = require("mongoose");
 // const userSchema = require("./models/userModel");
 const userRouters = require("./routes/userRouters");
 const { notFound, errorHandler } = require("./middlewares/errorMiddlewares");
+const cors = require("cors");
 
+app.use(cors());
 app.use(express.json());
 mongoose.connect(
   "mongodb://localhost:27017/assignment9db",
@@ -30,6 +32,7 @@ app.use("/user/create", userRouters);
 app.use("/user/edit", userRouters);
 app.use("/user/delete", userRouters);
 app.use("/user/getAll", userRouters);
+app.use("/api/users", userRouters);
 
 app.use(notFound);
 app.use(errorHandler);
