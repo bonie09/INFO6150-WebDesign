@@ -1,14 +1,7 @@
 #weatherCard {
-  color: white;
-  /* background-color: #282c34; */
-  border: 0.2px solid white;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 0.2px solid;
   border-radius: 10%;
-}
-
-#icon {
-  width: 80px;
-}
-
-.time {
-  font-weight: bold;
 }

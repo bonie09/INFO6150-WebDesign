@@ -16,8 +16,8 @@ function WeatherData(props) {
   const farenheitTemp = props.reading.main.temp;
 
   return (
-    <div className="row">
-      <div className="col-12">
+    <>
+      <div id="weatherCard" className="col-2">
         <Link
           to={{
             pathname: `/hourlyForecast/${props.reading.day}`,
@@ -27,25 +27,19 @@ function WeatherData(props) {
             },
           }}
         >
-          <div className="card py-1 mt-1">
-            <div className="row">
-              <div className="col">
-                <h4 className="text-secondary">
-                  {moment(_date).format("MMMM D YYYY")}
-                </h4>
-                <h5>{props.reading.day}</h5>
-                <i className={_img}></i>
-                <p>{props.reading.weather[0].description}</p>
-                <h5>Temperature: {farenheitTemp}°F</h5>
-                <p>
-                  Minimum: {fahrenheitMin}°F and Maximum: {fahrenheitMax}°F
-                </p>
-              </div>
-            </div>
-          </div>
+          <h4 className="text-secondary">
+            {moment(_date).format("MMMM D YYYY")}{" "}
+          </h4>
+          <h5>{props.reading.day}</h5>
+          <i className={_img}></i>
+          <p>{props.reading.weather[0].description}</p>
+          <h5>Temperature: {farenheitTemp}°F</h5>
+          <p>
+            Minimum: {fahrenheitMin}°F and Maximum: {fahrenheitMax}°F
+          </p>
         </Link>
       </div>
-    </div>
+    </>
   );
 }
 
