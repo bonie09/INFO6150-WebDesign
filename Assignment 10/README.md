@@ -9,9 +9,15 @@
 
 ### Project aspects:
 
-Created an application using openweather api to fetch temperature of city and to show minimum and maximum temperatue for 5 days
+1. Built a weather forecasting application using REACT
 
-- Used react-router to navigate to show particular days hourly forecast
+2. The app displays a 5-day weather forecast, showing high and low temperatures each day and an image for sunny/rainy/cloudy/snowy.
+
+3. User is able to click on a day and see its hourly forecast.
+
+4. React Router is added for each day.
+
+5. Openweathermap.org API is used to fetch 5-day forecast.
 
 ### Setup:
 
