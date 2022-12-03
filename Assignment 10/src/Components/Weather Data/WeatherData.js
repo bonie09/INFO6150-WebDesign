@@ -9,11 +9,11 @@ function WeatherData(props) {
   const weekday = props.reading.dt * 1000;
   _date.setTime(weekday);
   const _img = `owf owf-${props.reading.weather[0].id} owf-5x`;
-  const fahrenheitMax = props.reading.main.temp_max;
+  const fahrenheitMax = props.reading.main.temp_max.toFixed(2);
 
-  const fahrenheitMin = props.reading.main.temp_min;
+  const fahrenheitMin = props.reading.main.temp_min.toFixed(2);
 
-  const farenheitTemp = props.reading.main.temp;
+  const farenheitTemp = props.reading.main.temp.toFixed(2);
 
   return (
     <>
